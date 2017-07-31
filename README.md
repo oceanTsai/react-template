@@ -1,14 +1,14 @@
 # tmp
 
-> A Reac + redux t project
-1. webpack 作打包管理 
-2. react + redux 為主要系統架構
-3. semantic-ui RWD 框架
-4. gen code 
+> A Reac + redux t project   
+1. webpack 作打包管理   
+2. react + redux 為主要系統架構   
+3. semantic-ui RWD 框架   
+4. gen code   
 
-/config webpack使用參數
-/build , webpack打包設定，webpack dev server and hot reload.
-/generator gen code.
+/config webpack使用參數   
+/build , webpack打包設定，webpack dev server and hot reload.   
+/generator gen code.   
 
 
 ## Usage
