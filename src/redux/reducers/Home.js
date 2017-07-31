@@ -1,10 +1,10 @@
 import { handleActions } from 'redux-actions'
 import { 
-	GUIDELINE_UPDATE_STATE,
-	GUIDELINE_RESET_STATE,
-	//GUIDELINE_COMMON_COMMON_ASKING,
-	//GUIDELINE_COMMON_FAILURE,
-	//GUIDELINE_yourMethodName_SUCCESS
+	HOME_UPDATE_STATE,
+	HOME_RESET_STATE,
+	//HOME_COMMON_COMMON_ASKING,
+	//HOME_COMMON_FAILURE,
+	//HOME_yourMethodName_SUCCESS
 } from '@constants/ActionTypes'
 
 /**
@@ -16,7 +16,8 @@ import {
  */
 const initialState = () => ({
 	//將資料欄位定義於此
-	errors : []
+	errors: [],
+	name: ''
 })
 
 const state = {
@@ -24,16 +25,16 @@ const state = {
 }
 
 export default handleActions({
-	[GUIDELINE_UPDATE_STATE] : (state, action) => ({
+	[HOME_UPDATE_STATE] : (state, action) => ({
 		...state,
 		...action.data
 	}),
-	[GUIDELINE_RESET_STATE] : (state, action) => (
+	[HOME_RESET_STATE] : (state, action) => (
 		initialState()
 	),
 	/* 
 	// 通用請求處理
-	[GUIDELINE_COMMON_COMMON_ASKING] : (state, action) => {
+	[HOME_COMMON_COMMON_ASKING] : (state, action) => {
 	  const { payload , type, errors } = action
 	  return {
 	    ...state,
@@ -41,7 +42,7 @@ export default handleActions({
 	  }
 	},
 	//通用錯誤處理
-	[GUIDELINE_COMMON_FAILURE] : (state, action) => {
+	[HOME_COMMON_FAILURE] : (state, action) => {
 	  const { payload , type, errors } = action
 	  return {
 	    ...state,
@@ -50,7 +51,7 @@ export default handleActions({
 	  }
 	},
 	// api 處理範例
-	[GUIDELINE_yourMethodName_SUCCESS] : (state, action) => {
+	[HOME_yourMethodName_SUCCESS] : (state, action) => {
 		const { payload , type, errors } = action
 		return {
 			...state,

@@ -1,8 +1,11 @@
 import MainFrame from '@views/MainFrame'
+import Home from '@views/Home'
 import Notfound from '@views/common/Notfound'
 import Test from '@views/common/Test'
-import Guideline from '@views/ui/Guideline'
 //${import}
+
+export const notfound = `${PRE_FIX}/notfound'`
+export const test = `${PRE_FIX}/test`
 
 /**
  * @author 
@@ -15,20 +18,16 @@ export default [
 		path: PRE_FIX ? PRE_FIX : '/',
 		component: MainFrame,
 		indexRoute: {
-			component: Guideline
+			component: Home
 		},
 		childRoutes: [
 			{
-				path: `${PRE_FIX}/notfound'`,
+				path: notfound,
 				component: Notfound
 			},
 			{
-				path: `${PRE_FIX}/test`,
+				path: test,
 				component: Test
-			},
-			{
-				path: `${PRE_FIX}/guideline`,
-				component: Guideline
 			},
 			//${append}
 		]

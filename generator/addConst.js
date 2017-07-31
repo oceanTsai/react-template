@@ -33,9 +33,9 @@ module.exports = (gulp, prevInfo) => {
 
  		lineReader.on('close', function(){
  			//do back file
- 			gulp.src(resolve('src/redux/constants/ActionTypes.js'))
- 					.pipe(rename('history.js'))
- 					.pipe(gulp.dest(resolve('src/redux/constants/')))
+ 			//gulp.src(resolve('src/redux/constants/ActionTypes.js'))
+ 			//		.pipe(rename('history.js'))
+ 			//		.pipe(gulp.dest(resolve('src/redux/constants/')))
  			if(canModify){
  				 			gulp.src(resolve('src/redux/constants/ActionTypes.js'))
  				 					.pipe(replace(/\/\/\$\{const\}/g, 
@@ -47,13 +47,3 @@ module.exports = (gulp, prevInfo) => {
  		})
  	})
 }
-
-/**
- 			gulp.src(resolve('src/redux/constants/ActionTypes.js'))
- 					.pipe(replace(/\/\/\$\{const\}/g, 
- 						`export const ${outInfo.prefix}_UPDATE_STATE = '${outInfo.prefix}_UPDATE_STATE'
-export const ${outInfo.prefix}_UPDATE_STATE = '${outInfo.prefix}_UPDATE_STATE'
-//\${const}
- 						`))
- 					.pipe(gulp.dest(resolve('src/redux/constants/')))	
-*/

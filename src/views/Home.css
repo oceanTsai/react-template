@@ -1,0 +1,20 @@
+.home.container .row{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin-top: 5px;
+}
+
+.home.container .row.left{
+	justify-content: flex-start;
+}
+
+.home.container .row.right{
+		justify-content: flex-end;
+}
+
+.home.container .row.center{
+		justify-content: center;
+}
+
+

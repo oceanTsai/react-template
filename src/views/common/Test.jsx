@@ -18,6 +18,10 @@ export class Test extends Component {
     this.state = {}
   }
 
+  t = (key)=>(
+    this.props.i18n[key] || key
+  )
+
   componentWillReceiveProps(nextProps){
     //此處setState不會觸發react lifecycle
   }
@@ -32,10 +36,27 @@ export class Test extends Component {
   }
 
   render () {
+    const { t } = this
     return (
       <div className=''>
-      Test
-      <button onClick={()=>{this.props.actions.push('/common/notfound')}}>to notfound</button>
+      <h1>Test</h1>
+      <button className='ui button green' onClick={()=>{this.props.actions.push('/')}}>to home page</button>
+
+      <div className="ui action input">
+        <input type="text" placeholder="Search..." />
+        <button className="ui icon button">
+          <i className="filter icon"></i>
+        </button>
+      </div>
+
+      <br/>
+      <br/>
+
+      <div className="ui buttons white">
+        <button className="ui button active">{t('left')}</button>
+        <button className="ui button">{t('center')}</button>
+        <button className="ui button">{t('right')}</button>
+      </div>
       </div>
     )
   }
@@ -58,6 +79,12 @@ export class Test extends Component {
 }
 
 Test.proptypes = {
+}
+
+Test.defaultProps = {
+  //i18n預留
+  i18n : {
+  }
 }
 
 

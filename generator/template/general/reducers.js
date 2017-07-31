@@ -16,7 +16,7 @@ import {
  */
 const initialState = () => ({
 	//將資料欄位定義於此
-	errors : []
+	errors: []
 })
 
 const state = {

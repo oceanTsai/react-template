@@ -32,9 +32,9 @@ module.exports = (gulp, prevInfo) => {
 
 		lineReader.on('close', function() {
 			if(canModify){
-				gulp.src(resolve('src/routes/index.js'))
-						.pipe(rename('history.js'))
-						.pipe(gulp.dest(resolve('src/routes/')))
+				//gulp.src(resolve('src/routes/index.js'))
+				//		.pipe(rename('history.js'))
+				//		.pipe(gulp.dest(resolve('src/routes/')))
 
 				gulp.src(resolve('src/routes/index.js'))
 						.pipe(replace(/\/\/\$\{import\}/g, `import ${outInfo.fileName} from '@views/${viewPath}'\n//\${import}`))

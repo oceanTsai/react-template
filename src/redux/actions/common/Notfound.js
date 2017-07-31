@@ -17,29 +17,3 @@ export const updateState = data => ({
 export const resetState = () => ({
 	type : NOTFOUND_RESET_STATE
 })
-
-export const ajaxTest = (data) => ({
-	type : [
-		'NOTFOUND_COMMON_ASKING',
-		'NOTFOUND_AJAXZTEST_SUCCESS', 
-		'NOTFOUND_COMMON_FAILURE'
-	],
-	method : GET,
-	uri : 'getjson.ashx', //高雄市政府公開資訊
-	//data
-})
-
-export function twoAjaxTest() {
-  return dispatch => {
-    return dispatch(ajaxTest()).then(
-    		(action)=>{
-    			console.log('同步呼叫處理成功 action', action)
-    			//success
-    			//dispatch(youAjaxCall())
-    		},
-    		()=>{
-    			//err
-    		}
-      )
-  }
-}

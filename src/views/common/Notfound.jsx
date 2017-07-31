@@ -18,6 +18,10 @@ export class Notfound extends Component {
     this.state = {}
   }
 
+  t = (key)=>(
+    this.props.i18n[key] || key
+  )
+
   componentWillReceiveProps(nextProps){
     //此處setState不會觸發react lifecycle
   }
@@ -32,19 +36,12 @@ export class Notfound extends Component {
   }
 
   render () {
-
-    const {test} = this.props.notfound
     return (
       <div className='ui container'>
       Notfound
       <div>
-        {test}
-        4565656
       </div>
-        <button className='ui button blue' onClick={()=>{this.props.actions.updateState({test : '123456'})}}>更新 state 測試</button><br/><br/>
-        <button onClick={()=>{this.props.actions.push('/common/test')}}>to test</button><br/><br/>
-        <button onClick={()=>{this.props.actions.ajaxTest({id : '123456'})}}>ajax test</button>
-         <button className='abc' onClick={()=>{this.props.actions.twoAjaxTest({id : '123456'})}}>two ajax test</button>
+
 
 
       </div>
@@ -71,6 +68,11 @@ export class Notfound extends Component {
 Notfound.proptypes = {
 }
 
+Notfound.defaultProps = {
+  //i18n預留
+  i18n : {
+  }
+}
 
 const mapStateToProps = state => ({
   notfound: state.notfound

@@ -20,8 +20,6 @@ module.exports = (gulp, prevInfo) => {
  	gulp.task('combineRd', () => {
  		const { outInfo } = prevInfo()
 		const viewPath = outInfo.dir ? `@reducers/${outInfo.dir}/${outInfo.fileName}` : `@reducers/${outInfo.fileName}`
-		console.log('xxxxxxx', viewPath)
-		console.log(outInfo)
 		const inputStream = fs.createReadStream(resolve('src/redux/reducers/index.js'))
 		const lineReader = readline.createInterface({ input: inputStream })
 		var canModify = true
@@ -34,9 +32,9 @@ module.exports = (gulp, prevInfo) => {
 
 		lineReader.on('close', function() {
 			if(canModify){
-				gulp.src(resolve('src/redux/reducers/index.js'))
-						.pipe(rename('history.js'))
-						.pipe(gulp.dest(resolve('src/redux/reducers/')))
+				//gulp.src(resolve('src/redux/reducers/index.js'))
+				//		.pipe(rename('history.js'))
+				//		.pipe(gulp.dest(resolve('src/redux/reducers/')))
 				
 				gulp.src(resolve('src/redux/reducers/index.js'))
 						.pipe(replace(/\/\/\$\{import\}/g, `import ${outInfo.stateScope} from '${viewPath}'\n//\${import}`))
